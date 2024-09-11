@@ -30,7 +30,7 @@ const Table = ({ columns, data }) => {
               {headerGroup.headers.map(column => (
                 <th
                   {...column.getHeaderProps()}
-                  className="px-4 py-2 text-left text-sm font-medium text-[#FFFFFF]"
+                  className="px-4 py-2 text-left text-[16px] font-medium text-[#FFFFFF]"
                 >
                   {column.render('Header')}
                 </th>
@@ -46,7 +46,7 @@ const Table = ({ columns, data }) => {
                 {row.cells.map(cell => (
                   <td
                     {...cell.getCellProps()}
-                    className="px-4 py-2 text-sm text-gray-600 border border-[#A8A8A84D]"
+                    className="px-4  py-2 text-sm text-[#737373] border border-[#A8A8A84D]"
                   >
                     {cell.render('Cell')}
                   </td>

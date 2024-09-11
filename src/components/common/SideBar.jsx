@@ -46,11 +46,11 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/daily-deploy") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/daily-deploy")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Vector (52).png" alt="" /> :  <img src="../icons/Vector (51).png" alt="" />
+                    {path.startsWith("/daily-deploy") ?   <img src="../icons/Vector (52).png" alt="" /> :  <img src="../icons/Vector (51).png" alt="" />
                     }
                 </span>
                 <p>Daily Deployment</p>
@@ -167,7 +167,7 @@ const SideBar = () => {
          
             </div>
             </div>
-            <div className='flex justify-end mr-[20px] mt-[50px]'>
+            <div className='flex justify-end mr-[20px] mt-[50px]' onClick={()=> navigate('/')}>
                 <img src="../icons/Vector (65).png" alt="" className='cursor-pointer'/>
             </div>
         </div>

@@ -1,34 +1,22 @@
 import React, { useState } from 'react';
 import { useTable, usePagination } from 'react-table';
 import ReactPaginate from 'react-paginate';
+import { useNavigate } from 'react-router-dom';
 
-const VisitTable = ({ columns, data }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [downloadData, setDownloadData] = useState(null);
+const PresentTable = ({ columns, data }) => {
+  const navigate = useNavigate()
 
-  const handleDownloadClick = (row) => {
-    setDownloadData(row.original); // Save the row data to use in the modal
-    setIsModalOpen(true);
-    setTimeout(()=>{
-        closeModal()
-    },2000) // Open the modal
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setDownloadData(null);
-  };
 
   const updatedColumns = React.useMemo(() => [
     ...columns,
     {
-      Header: 'Site Report Download',
+      Header: 'Details',
       Cell: ({ row }) => (
         <button
-          onClick={() => handleDownloadClick(row)}
+          onClick={() => navigate('/daily-deploy/present-view')}
           className="p-2 bg-transparent hover:bg-gray-200 rounded"
         >
-          <img src="../Vector (66).png" alt="Download" className="h-6 w-6" />
+          <img src="../Vector (67).png" alt="Download" className="" />
         </button>
       ),
     },
@@ -112,19 +100,9 @@ const VisitTable = ({ columns, data }) => {
         />
       </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-4 py-[60px] rounded shadow-lg w-1/3">
-          <div className='flex flex-col items-center gap-[20px]'>
-            <img src="../Frame 48095930.png" alt="" />
-            <p className='font-bold text-[#121212]'>Successfully Downloaded</p>
-       </div>
-           
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };
 
-export default VisitTable;
+export default PresentTable;
