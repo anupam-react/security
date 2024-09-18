@@ -13,6 +13,11 @@ import TotalDeploymentViewTable from './components/DailyDeploy/TotalDeploymentVi
 import CheckOutPage from './components/DailyDeploy/CheckOutPage';
 import PresentPage from './components/DailyDeploy/PresentPage';
 import PresentViewTable from './components/DailyDeploy/PresentViewTable';
+import ShortagePage from './components/DailyDeploy/ShortagePage';
+import DoubleDutyPage from './components/DailyDeploy/DoubleDutyPage';
+import LatePage from './components/DailyDeploy/LatePage';
+import UnmappedPage from './components/DailyDeploy/UnmappedPage';
+import Approval from './components/Approval';
 
 function App() {
   return (
@@ -29,6 +34,11 @@ function App() {
       <Route path="/daily-deploy/checkout" element={<CheckOutPage />} />
       <Route path="/daily-deploy/present" element={<PresentPage />} />
       <Route path="/daily-deploy/present-view" element={<PresentViewTable />} />
+      <Route path="/daily-deploy/shortage" element={<ShortagePage />} />
+      <Route path="/daily-deploy/double-duty" element={<DoubleDutyPage />} />
+      <Route path="/daily-deploy/late" element={<LatePage />} />
+      <Route path="/daily-deploy/unmapped" element={<UnmappedPage />} />
+      <Route path="/approval" element={<Approval />} />
 
        </Route>
       </Routes>

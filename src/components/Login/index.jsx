@@ -3,12 +3,21 @@ import './login.css'
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
 const Login = () => {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    isChecked,
+    setIsChecked,
+    handleCheckboxChange,
+    handleLogin,
+  } = useLogin()
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate()
-  const handleLogin = () =>{
-    navigate('/dashboard')
-  }
+
+ 
   return (
     <div className="flex justify-center items-center h-[100vh] w-full bg-black">
       <div className="h-[100vh] w-[100%] relative">
@@ -24,9 +33,9 @@ const Login = () => {
                       <p className="text-[#F02946] text-[24px]">Welcome! Please enter your information below and get started.</p>
                     </div>
                     <div className="mx-[20px] mt-[30px]">
-                      <input type="text" className="px-[10px] py-[8px] rounded-[8px] w-full mb-[14px]" placeholder="Email"/>
+                      <input type="text" onChange={(e)=> setEmail(e.target.value)} value={email} className="px-[10px] py-[8px] rounded-[8px] w-full mb-[14px]" placeholder="Email"/>
                       <div className="relative">
-                      <input type="text" className="px-[10px] pr-[50px] py-[8px] rounded-[8px] w-full" placeholder="Password"/>
+                      <input type="text" onChange={(e)=> setPassword(e.target.value)} value={password} className="px-[10px] pr-[50px] py-[8px] rounded-[8px] w-full" placeholder="Password"/>
                       <div className="absolute top-2 right-3 cursor-pointer" onClick={()=> setShowPassword(!showPassword)}>
                     <FontAwesomeIcon
                         icon={showPassword ? faEyeSlash : faEye}
@@ -37,7 +46,7 @@ const Login = () => {
                     </div>
                     <div className="mx-[20px] mt-[16px] flex justify-between"> 
                       <div>
-                      <input type="checkbox" name="" id="" className="w-[20px] h-[16px] "/>
+                      <input onChange={handleCheckboxChange} value={isChecked} type="checkbox" name="" id="" className="w-[20px] h-[16px] "/>
                         <label htmlFor="" className="text-[#F02946] pl-[6px]">Remember me</label>
                       </div>
                       <p className="text-[#39434F]">Forgot Password?</p>

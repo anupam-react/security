@@ -68,11 +68,11 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/approval") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/approval")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Vector (54).png" alt="" /> :  <img src="../icons/Vector (53).png" alt="" />
+                    {path.startsWith("/approval") ?   <img src="../icons/Vector (54).png" alt="" /> :  <img src="../icons/Vector (53).png" alt="" />
                     }
                 </span>
                 <p>Approval Request</p>

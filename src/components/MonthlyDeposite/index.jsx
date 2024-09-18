@@ -1,123 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Table from "../common/Table";
 import Select from "react-select";
+import { fetchApiData } from "../../utiils";
 
 const MonthlyDeposite = () => {
+
+const [deploy , setDeploy] = useState({})
+
+const getMonthlyDeployment = async() =>{
+const data =  await fetchApiData('https://royal-security-backend.vercel.app/api/v1/admin/getMonthlyDeployment')
+setDeploy(data?.data)
+}
+
+useEffect(()=>{
+  getMonthlyDeployment()
+},[])
+
+console.log(deploy)
+ 
+
+
   const columns = [
     { Header: "Site Id", accessor: "siteId" },
     { Header: "Site Name", accessor: "siteName" },
-    { Header: "City", accessor: "city" },
-    { Header: "State", accessor: "state" },
-    { Header: "Man Day Required", accessor: "manDayRequired" },
-    { Header: "Duty Done", accessor: "dutyDone" },
-    { Header: "Short Man Day", accessor: "shortManDay" },
-    { Header: "Stability Coefficient", accessor: "stabilityCoefficient" },
+    { Header: "Total Security Guards", accessor: "totalSecurityGuards" },
+    { Header: "Total Security Supervisors", accessor: "totalSecuritySupervisors" },
+    { Header: "Total Deployments", accessor: "totalDeployments" },
+    { Header: "Present Count", accessor: "presentCount" },
+
   ];
 
-  const data = [
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
-    {
-      siteId: "#125486",
-      siteName: "Lorem Ipsum",
-      city: "Lorem",
-      state: "Lorem Ipsum",
-      manDayRequired: "Jaxson Culhane",
-      dutyDone: "01",
-      shortManDay: "03-05-2024 At 06:00am",
-      stabilityCoefficient: "Lorem Ipsum",
-    },
 
-    // Add more data objects as needed...
-  ];
 
   const monthOptions = [
     { label: "January", value: "01" },
@@ -166,7 +79,7 @@ const MonthlyDeposite = () => {
           </div>
         </div>
       </div>
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={deploy} />
     </div>
   );
 };

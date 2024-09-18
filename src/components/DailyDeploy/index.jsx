@@ -34,7 +34,7 @@ const DailyDeploy = () => {
           </div>
           <PresentChart />
         </div>
-        <div className=" border-2 border-[#F02946] rounded-[20px] p-4">
+        <div className=" border-2 border-[#F02946] rounded-[20px] p-4 cursor-pointer" onClick={()=>navigate('/daily-deploy/shortage')}>
           <div className="flex gap-4 items-center mb-4">
             <img src="../Group 1363 (2).png" alt="" />
             <p className="font-[500]">Shortage</p>
@@ -42,7 +42,7 @@ const DailyDeploy = () => {
           <ShortageChart />
 
         </div>
-        <div className=" border-2 border-[#F02946] rounded-[20px] p-4">
+        <div className=" border-2 border-[#F02946] rounded-[20px] p-4 cursor-pointer" onClick={()=>navigate('/daily-deploy/double-duty')}>
           <div className="flex gap-4 items-center mb-4">
             <img src="../Group 1363 (3).png" alt="" />
             <p className="font-[500]">Double Duty</p>
@@ -50,7 +50,7 @@ const DailyDeploy = () => {
           <DoubleDuty />
 
         </div>
-        <div className=" border-2 border-[#F02946] rounded-[20px] p-4">
+        <div className=" border-2 border-[#F02946] rounded-[20px] p-4 cursor-pointer" onClick={()=>navigate('/daily-deploy/late')}>
           <div className="flex gap-4 items-center mb-4">
             <img src="../Group 1363 (4).png" alt="" />
             <p className="font-[500]">Late</p>
@@ -58,7 +58,7 @@ const DailyDeploy = () => {
           <Late />
 
         </div>
-        <div className=" border-2 border-[#F02946] rounded-[20px] p-4">
+        <div className=" border-2 border-[#F02946] rounded-[20px] p-4 cursor-pointer" onClick={()=>navigate('/daily-deploy/unmapped')}>
           <div className="flex gap-4 items-center mb-4">
             <img src="../Group 1363 (5).png" alt="" />
             <p className="font-[500]">Unmapped Site</p>
