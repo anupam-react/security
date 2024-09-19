@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TotalDeploymentTable from "./TotalDeploymentTable";
 import { useNavigate } from "react-router-dom";
 import PresentTable from "./PresentTable";
+import { fetchApiData } from "../../utiils";
 
 const PresentPage = () => {
+
+  const [deploy , setDeploy] = useState([])
+
+  const getSiteWiseAttendance = async() =>{
+  const data =  await fetchApiData('https://royal-security-backend.vercel.app/api/v1/admin/getSiteWiseAttendance')
+  setDeploy(data?.data)
+  }
+  
+  useEffect(()=>{
+    getSiteWiseAttendance()
+  },[])
+  
+  console.log(deploy)
 
   const navigate = useNavigate()
   const columns = [

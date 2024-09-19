@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Select from "react-select";
+import { fetchApiData } from '../../utiils';
 
 const data = [
   {
@@ -286,6 +287,18 @@ const data = [
 const DoubleDutyPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const navigate = useNavigate()
+
+    const [deploy , setDeploy] = useState([])
+
+    const getSiteWiseAttendance = async() =>{
+    const data =  await fetchApiData('https://royal-security-backend.vercel.app/api/v1/admin/doubleDutyDaily')
+    setDeploy(data?.data)
+    }
+    
+    useEffect(()=>{
+      getSiteWiseAttendance()
+    },[])
+
   const rowsPerPage = 10;
 
   // Calculate pagination data

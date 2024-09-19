@@ -79,7 +79,7 @@ console.log(deploy)
           </div>
         </div>
       </div>
-      <Table columns={columns} data={deploy} />
+    {!!deploy?.length && <Table columns={columns} data={deploy} />}
     </div>
   );
 };

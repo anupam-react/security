@@ -18,6 +18,11 @@ import DoubleDutyPage from './components/DailyDeploy/DoubleDutyPage';
 import LatePage from './components/DailyDeploy/LatePage';
 import UnmappedPage from './components/DailyDeploy/UnmappedPage';
 import Approval from './components/Approval';
+import Employee from './components/Employee';
+import AddEmployee from './components/Employee/AddEmployee';
+import Recruitment from './components/Employee/Recruitment';
+import Profile from './components/Employee/Profile';
+import UpdateProfile from './components/Employee/UpdateProfile';
 
 function App() {
   return (
@@ -39,6 +44,11 @@ function App() {
       <Route path="/daily-deploy/late" element={<LatePage />} />
       <Route path="/daily-deploy/unmapped" element={<UnmappedPage />} />
       <Route path="/approval" element={<Approval />} />
+      <Route path="/employee" element={<Employee />} />
+      <Route path="/employee/add-employee" element={<AddEmployee />} />
+      <Route path="/employee/recruitment" element={<Recruitment />} />
+      <Route path="/employee/profile" element={<Profile />} />
+      <Route path="/employee/update-profile" element={<UpdateProfile />} />
 
        </Route>
       </Routes>

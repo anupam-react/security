@@ -1,94 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TotalDeploymentTable from "./TotalDeploymentTable";
 import { useNavigate } from "react-router-dom";
+import { fetchApiData } from "../../utiils";
 
 const TotalDeploymentPage = () => {
 
+const [deploy , setDeploy] = useState({})
+
+const getSiteWiseDailyDeployment = async() =>{
+const data =  await fetchApiData('https://royal-security-backend.vercel.app/api/v1/admin/getSiteWiseDailyDeployment')
+setDeploy(data?.data)
+}
+
+useEffect(()=>{
+  getSiteWiseDailyDeployment()
+},[])
+
+console.log(deploy)
+
   const navigate = useNavigate()
   const columns = [
-    { Header: "Sites", accessor: "Sites" },
-    { Header: "Supervisor", accessor: "Supervisor" },
-    { Header: "Total Guards", accessor: "TotalGuards" },
+    { Header: "Sites", accessor: "siteName" },
+    { Header: "Supervisor", accessor: "deployments.C.securitySupervisors" },
+    { Header: "Total Guards", accessor: "deployments.C.securityGuards" },
     { Header: "Locations", accessor: "Locations" },
 
   ];
 
-  const data = [
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    {
-      Sites: "Site 1",
-      Supervisor: "02",
-      TotalGuards: "14",
-      Locations: "Lorem Ipsum",
-    },
-    
-    
-  ];
+ 
   return (
     <div>
       <div className="flex items-center gap-[50px]">
@@ -98,7 +37,7 @@ const TotalDeploymentPage = () => {
           <p className="font-bold text-[24px] pt-4">10k</p>
         </div>
       </div>
-      <TotalDeploymentTable columns={columns} data={data}/>
+      <TotalDeploymentTable columns={columns} data={deploy}/>
     </div>
   );
 };
