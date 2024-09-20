@@ -35,7 +35,7 @@ const useLogin = () => {
         formData,
         headers
       );
-      alert("LogIn Successfully");
+      // alert("LogIn Successfully");
       sessionStorage.setItem("token", response?.data?.token);
       navigate("/dashboard");
       console.log(response?.data?.token);

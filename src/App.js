@@ -23,6 +23,9 @@ import AddEmployee from './components/Employee/AddEmployee';
 import Recruitment from './components/Employee/Recruitment';
 import Profile from './components/Employee/Profile';
 import UpdateProfile from './components/Employee/UpdateProfile';
+import ManualAttendance from './components/ManualAttendance';
+import EmpProfile from './components/EmpProfile';
+import LeaveApproval from './components/LeaveApproval';
 
 function App() {
   return (
@@ -48,7 +51,10 @@ function App() {
       <Route path="/employee/add-employee" element={<AddEmployee />} />
       <Route path="/employee/recruitment" element={<Recruitment />} />
       <Route path="/employee/profile" element={<Profile />} />
+      <Route path="/profile" element={<EmpProfile />} />
       <Route path="/employee/update-profile" element={<UpdateProfile />} />
+      <Route path="/attendance" element={<ManualAttendance />} />
+      <Route path="/leave" element={<LeaveApproval />} />
 
        </Route>
       </Routes>

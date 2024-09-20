@@ -1,7 +1,8 @@
 import React from 'react';
-import ApprovalProfileCard from './ApprovalProfileCard';
+import ApprovalProfileCard from '../Approval/ApprovalProfileCard';
 
-const RequestCard = ({ requestNumber, user, department, contact, location, requestDetails, onApprove, onReject }) => {
+
+const ApprovalCard = ({ requestNumber, user, department, contact, location, requestDetails, onApprove, onReject }) => {
   return (
     <div className="flex flex-col md:flex-row bg-white border rounded-lg shadow-lg p-4 mb-4">
       {/* Left Section */}
@@ -11,13 +12,20 @@ const RequestCard = ({ requestNumber, user, department, contact, location, reque
       <div className="flex-1 mt-4 md:mt-0">
         <div className='flex gap-4'>
         <div className='bg-[#D9D9D9] flex-1 p-4 rounded-[10px]'>
-        <h2 className="text-xl font-bold text-red-500">Request for regularization</h2>
-        <p className="text-gray-600 mt-2">{requestDetails}</p>
+          <div className='flex justify-between'>
+        <h2 className="text-[32px] font-bold text-red-500">Leave Application</h2>
+<p className='text-[#F02946]'>Guard ID: #123654</p>
+          </div>
+        <div className='flex gap-4'>
+          <p className='text-[20px] text-[#F02946] font-bold'>From: 18/06/2024</p>
+          <p  className='text-[20px] text-[#F02946] font-bold'>To: 28/06/2024</p>
+        </div>
+        <p className=" mt-2">{requestDetails}</p>
 
         </div>
 
         {/* Approve / Reject Buttons */}
-        <div className="flex flex-col gap-4 mt-4">
+        <div className="flex flex-col gap-4  mt-4">
           <button
             onClick={onApprove}
             className="bg-[#94FF91] w-[150px] text-[#008E17] font-bold py-2 rounded-full hover:bg-green-600"
@@ -38,4 +46,4 @@ const RequestCard = ({ requestNumber, user, department, contact, location, reque
   );
 };
 
-export default RequestCard;
+export default ApprovalCard;

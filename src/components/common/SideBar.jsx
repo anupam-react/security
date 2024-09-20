@@ -79,11 +79,11 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/attendance") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/attendance")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Mask group (5).png" alt="" /> :  <img src="../icons/attendance 1.png" alt="" />
+                    {path.startsWith("/attendance") ?   <img src="../icons/Mask group (5).png" alt="" /> :  <img src="../icons/attendance 1.png" alt="" />
                     }
                 </span>
                 <p>Manual Attendance</p>
@@ -112,11 +112,11 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/profile") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/profile")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Vector (58).png" alt="" /> :  <img src="../icons/Vector (57).png" alt="" />
+                    {path.startsWith("/profile") ?   <img src="../icons/Vector (58).png" alt="" /> :  <img src="../icons/Vector (57).png" alt="" />
                     }
                 </span>
                 <p>Profile</p>
@@ -145,11 +145,11 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/leave") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/leave")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Vector (62).png" alt="" /> :  <img src="../icons/Vector (61).png" alt="" />
+                    {path.startsWith("/leave") ?   <img src="../icons/Vector (62).png" alt="" /> :  <img src="../icons/Vector (61).png" alt="" />
                     }
                 </span>
                 <p>Leave Approval</p>
