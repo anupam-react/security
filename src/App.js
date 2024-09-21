@@ -26,6 +26,10 @@ import UpdateProfile from './components/Employee/UpdateProfile';
 import ManualAttendance from './components/ManualAttendance';
 import EmpProfile from './components/EmpProfile';
 import LeaveApproval from './components/LeaveApproval';
+import UpdateProfileCard from './components/UpdateProfileRequest/UpdateProfileCard';
+import UpdateProfileRequest from './components/UpdateProfileRequest';
+import Report from './components/Report';
+import DownloadReport from './components/Report/DownloadReport';
 
 function App() {
   return (
@@ -55,6 +59,9 @@ function App() {
       <Route path="/employee/update-profile" element={<UpdateProfile />} />
       <Route path="/attendance" element={<ManualAttendance />} />
       <Route path="/leave" element={<LeaveApproval />} />
+      <Route path="/updateprofile-request" element={<UpdateProfileRequest />} />
+      <Route path="/report" element={<Report />} />
+      <Route path="/report/download" element={<DownloadReport />} />
 
        </Route>
       </Routes>

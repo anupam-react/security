@@ -123,22 +123,22 @@ const SideBar = () => {
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/updateprofile-request") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/updateprofile-request")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Group (12).png" alt="" /> :  <img src="../icons/Group (11).png" alt="" />
+                    {path.startsWith("/updateprofile-request") ?   <img src="../icons/Group (12).png" alt="" /> :  <img src="../icons/Group (11).png" alt="" />
                     }
                 </span>
                 <p>Profile Update Request</p>
          
             </div>
             <div
-              className={path.startsWith("/visit") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
-              onClick={() => navigate("/visit")}
+              className={path.startsWith("/report") ? " text-[#FFFFFF] border border-b-4 border-b-[#000000] bg-[#F02946] py-[6px] rounded-[50px] flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]" : "flex items-center gap-[10px] pl-[14px] cursor-pointer font-[500]"}
+              onClick={() => navigate("/report")}
             >
                 <span>
-                    {path.startsWith("/visit") ?   <img src="../icons/Vector (60).png" alt="" /> :  <img src="../icons/Vector (59).png" alt="" />
+                    {path.startsWith("/report") ?   <img src="../icons/Vector (60).png" alt="" /> :  <img src="../icons/Vector (59).png" alt="" />
                     }
                 </span>
                 <p>Report</p>
